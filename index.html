@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .team-section {
+            position: relative;
+            background-image: url('https://cdn.expeditions.com/globalassets/expedition-stories/cambodia-up-close-7-must-see-sites-at-angkor-wat/angkor-wat-main.jpg?width=1920&height=1080&mode=crop&scale=none&quality=50');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content p {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .container_list {
+            display: flex;
+            justify-content: center;
+            padding: 60px 15%;
+            background-color: #f9f9f9;
+        }
+        .property {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .property img {
+            width: 500px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .textskill {
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .textskill h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .textskill p {
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .social-icons a:hover {
+            background-color: white;
+            color: rgba(0, 0, 0, 0.795);
+        }
+        .resumeback {
+            color: rgba(9, 9, 9, 0.087);
+            position: absolute;
+            margin: 0;
+            top: 0;
+            font-size: 110px;
+            z-index: -2;
+            margin-left: 20px;
+        }
+        .resumeback1 {
+            color: rgba(9, 9, 9, 0.087);
+            position: absolute;
+            margin: 0;
+            top: 0;
+            font-size: 110px;
+            z-index: -2;
+            margin-left: 26%;
+        }
+        .info-section {
+            position: relative;
+            text-align: center;
+            justify-content: space-between;
+            margin: 40px 20%;
+            margin-top: 50px;
+        }
+        .info-section h1 {
+            font-size: 40px;
+        }
+        .info-section p {
+            font-size: 20px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container_list {
+                padding: 20px 5%;
+            }
+            .property {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .property img {
+                width: 100%;
+                height: auto;
+            }
+            .textskill {
+                max-width: 100%;
+            }
+            .content h1 {
+                font-size: 32px;
+            }
+            .content p {
+                font-size: 16px;
+            }
+            .info-section {
+                margin: 20px 5%;
+            }
+            .info-section h1 {
+                font-size: 32px;
+            }
+            .info-section p {
+                font-size: 18px;
+            }
+           .resumeback {
+                font-size: 80px;
+                top: -10px;
+                margin-left: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 24px;
+            }
+            .content p {
+                font-size: 14px;
+            }
+            .info-section h1 {
+                font-size: 24px;
+            }
+            .info-section p {
+                font-size: 16px;
+            }
+            .resumeback {
+                font-size: 40px;
+                margin-left: 5px;
+            }
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+        /* card_informations */
+        .card_information{
+            
+            flex-wrap: wrap; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding-inline: 17%; 
+            gap: 40px; 
+            margin-top: 60px;
+        }
+        .card{
+            
+            text-align: center;
+            padding: 20px;
+            width:  300px;
+            height: 390px;
+            background-color: rgba(255, 249, 249, 0.275);
+            border: 1px solod;
+            box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.177);
+            position: relative;
+            overflow: hidden;
+        }
+        .card p{
+            max-width: 500px;
+        }
+        .card img{
+            margin-top: 14px;
+            text-align: center;
+            width: 290px;
+            height: 220px;
+            transition: opacity 0.3s ease;
+            
+        }
+        .card:hover img {
+            opacity: 0.4; 
+        }
+        .card_information .card img{
+            display: inline-block
+        }
+        
+        /* for icon absolute */
+        .icon_information {
+        position: absolute;
+        bottom: 25%; 
+        left: 50%;
+        transform: translateX(-50%); 
+        display: flex;
+        opacity: 0; 
+        visibility: hidden; 
+        gap: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+    .card:hover .icon_information {
+    
+    opacity: 1; 
+    visibility: visible;
+    cursor: pointer;
+   }
+   .skills-container {
+    padding-inline: 20%;
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.skill {
+    width: 45%;
+}
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress-bar {
+    background-color: #6b68684d;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.progress {
+    height: 10px;
+    background-color: #f7c12b;
+}
+    </style>
+</head>
+<body>
+    <div class="team-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>About Our Team</h1>
+            <p>Awesome, clean & Activity, Cooperations</p>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="container_list">
+        <div class="property">
+            <img src="https://www.workitdaily.com/media-library/happy-employees-on-a-successful-team.jpg?id=30117495&width=1200&height=600&coordinates=0%2C75%2C0%2C75" alt="logo">
+            <div class="textskill">
+                <h1>About Us & Our Skills</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam porro pariatur minima ut distinctio molestiae exercitationem optio? Porro sint nostrum necessitatibus molestias quia? Perferendis, maxime? Quaerat ratione rerum soluta voluptas.</p>
+                <p><i class="fa fa-quote-left" aria-hidden="true"></i> Talking about us, the way we are going to like us, or about the some informations.</p>
+                <div class="social-icons">
+                    <a href="#" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="mailto:pichsoppognu.biu@gmail.com" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="info-section">
+        <h1>Team Informations</h1>
+        <h1 class="resumeback" style="font-size: 110px;">Team Informations</h1>
+        <p>I will demonstrate to you about my teammates, we will provide detailed information about us to all of you.</p>
+    </div>
+    <div class="card_information">
+        <div class="card">
+            <h1>Pich Sopongnu</h1>
+            <p>Hi, I'm  Sopongnu. I am a software developer. I am glad to see you here. I will try my best to comoplete this purpose </p> 
+            <img src="./img/sopponu.jpg" alt="">
+            
+            <div class="icon_information">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ps.pich.790?mibextid=ZbWKwL" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="mailto:pichsoppognu.biu@gmail.com" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Phirum Panha Roth</h1>
+            <p>Hi, I'm  Panha Roth. I am a software developer. I am glad to see you here. I will try my best to comoplete this purpose </p> 
+            <img src="./img/roth.jpg" alt="">
+            
+            <div class="icon_information">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100070002755524&mibextid=ZbWKwL" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="mailto:phirumpanharoth.biu@gmail.com" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1>Horm Sophorn</h1>
+            <p>Hi, I'm  Sophorn. I am a software developer. I am glad to see you here. I will try my best to comoplete this purpose </p> 
+            <img src="./img/phorn.jpg" alt="">
+            <div class="icon_information">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100088314306741&mibextid=ZbWKwL" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="mailto:natophorn@gmail.com" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Keam Serey</h1>
+            <p>Hi, I'm  Sery. I am a software developer. I am glad to see you here. I will try my best to comoplete this purpose </p> 
+            <img src="./img/serey.jpg" alt="">
+            <div class="icon_information">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100081008086225&mibextid=ZbWKwL" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="mailto:keamserey.biu@gmail.com" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Va Mengly</h1>
+            <p>Hi, I'm  Mengly. I am a software developer. I am glad to see you here. I will try my best to comoplete this purpose </p> 
+            <img src="https://i.pinimg.com/originals/c1/46/ec/c146ec84e01d9e3672b281dc55d71309.jpg" alt="">
+            <div class="icon_information">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mengly.mengly.5494?mibextid=ZbWKwL" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#megnyly" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Oueng Sovanatana</h1>
+            <p>Hi, I'm  Rathana. I am a software developer. I am glad to see you here. I will try my best to comoplete this purpose </p> 
+            <img src="https://i.pinimg.com/originals/c1/46/ec/c146ec84e01d9e3672b281dc55d71309.jpg" alt="">
+            <div class="icon_information">
+                <div class="social-icons">
+                    <a href="#" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="rathana" ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="info-section">
+        <h1>Our Skills</h1>
+        <h1 class="resumeback1" style="font-size: 110px;">Our Skills</h1>
+        <p>I will demonstrate to you about my teammates, we will show you the ability or skill of our teamate.</p>
+    </div>
+    <div class="skills-container">
+        <div class="skill">
+            <div class="skill-name">
+                <p>Photoshop</p>
+                <p>90%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">
+                <p>MS Office</p>
+                <p>85%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">
+                <p>HTML</p>
+                <p>95%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 95%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">
+                <p>CSS</p>
+                <p>90%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">
+                <p>Javascript</p>
+                <p>70%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">
+                <p>CPP</p>
+                <p>80%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="container_footer">
+            
+        </div>
+    </footer>
+</body>
+</html>
